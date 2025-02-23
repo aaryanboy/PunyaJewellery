@@ -23,7 +23,8 @@ const NavIcons = () => {
            <div className="absolute -top-4 -right-4 w-6 h-6 bg-notification rounded-full text-white text-sm flex items-center justify-center">5</div>
            </div>
             {isCartOpen && (
-                <CartModel/>
+                <div className="relative"><CartModel/></div>
+                
             )}
 
 
