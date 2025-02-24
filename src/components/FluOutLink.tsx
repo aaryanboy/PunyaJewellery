@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useState} from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface FlyoutLinkProps {
@@ -53,15 +53,19 @@ const FlyoutLink: React.FC<FlyoutLinkProps> = ({ children, href, FlyoutContent }
 // Flyout content component
 const PricingContent = <div className="h-24 w-64 bg-white p-6 shadow-xl">Pricing details here</div>;
 
+
+
 const FluOutLink = () => {
+
+
   return (
     <div className="flex items-center text-xl px-3 py-13 mt-5 z-30">
     <FlyoutLink href="/">Home</FlyoutLink>
     <div className="p-5"></div>
-    <FlyoutLink href="/" FlyoutContent={PricingContent}>Pricing</FlyoutLink>
+    <FlyoutLink href="/about" >AboutUs</FlyoutLink>
     <div className="p-5"></div>
   
-    <FlyoutLink href="/" FlyoutContent={PricingContent}>Pricing</FlyoutLink>
+    <FlyoutLink href=""  FlyoutContent={PricingContent} >Pricing</FlyoutLink>
   </div>
   
   );

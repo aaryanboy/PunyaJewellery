@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link";
+
 import { title } from "process";
 import { use, useEffect, useState } from "react";
 import Image from "next/image";
@@ -10,25 +11,25 @@ import Image from "next/image";
 const slides=[
     {
         id: 1,
-        title:"slide 1",
-        img:"https://images.pexels.com/photos/30824250/pexels-photo-30824250/free-photo-of-playful-seals-on-rocky-san-diego-shore.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-        description:"description 1",
+        title:"Jewelry",
+        img:"/images/photos for video/DSC00442.jpg",
+        description:"",
         url:"/",
         bg:" bg-gradient-to-r from-yellow-50 to-pink-50",
     },
     {
         id: 2,
-        title:"slide 2",
-        img:"https://images.pexels.com/photos/30824250/pexels-photo-30824250/free-photo-of-playful-seals-on-rocky-san-diego-shore.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-        description:"description 2",
+        title:"Rings",
+        img:"/images/photos for video/DSC00163.jpg",
+        description:"",
         url:"/",
         bg:" bg-gradient-to-r from-gray-50 to-black-50",
     },
     {
         id: 3,
-        title:"slide 3",
-        img:"https://images.pexels.com/photos/30824250/pexels-photo-30824250/free-photo-of-playful-seals-on-rocky-san-diego-shore.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-        description:"description 3",
+        title:"Earrings",
+        img:"/images/photos for video/DSC00395.jpg",       
+        description:"",
         url:"/",
         bg:" bg-gradient-to-r from-blue-50 to-white-50",
     }, 
@@ -40,7 +41,7 @@ const Slider = () => {
     useEffect(() => {
         const interval = setInterval(() => {
 setCurrent(prev => (prev===slides.length-1 ? 0: prev+1))
-        },3000);
+        },5000);
 
         return () => clearInterval(interval);
     })
