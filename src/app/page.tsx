@@ -1,4 +1,5 @@
 import Slider from "@/components/Slider"
+import Images from "@/components/firstimage/Images"
 
 
 const HomePage = () => {
@@ -6,6 +7,7 @@ const HomePage = () => {
    
     
     <div className=''>
+      <Images/>
       <Slider/>
     </div> 
      
