@@ -39,7 +39,7 @@ const newArrivals: Product[] = [
 
 const NewArrivals: React.FC = () => (
   <div>
-    <h2 className="text-center text-3xl font-semibold text-gray-800 mt-10 mb-6 uppercase tracking-wide">
+    <h2 className="text-center text-3xl  font-serif  text-gray-800 mt-10 mb-6 uppercase tracking-wide">
   New Arrivals
 </h2>
 
