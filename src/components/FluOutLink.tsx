@@ -64,7 +64,7 @@ const PricingContent = (
     <div className="flex justify-between gap-8">
       {/* Gold Jewelry Section */}
       <div className="p-4 flex-1">
-        <h3 className="text-xl  cursor-pointer">Gold </h3>
+        <h3 className="text-xl  cursor-pointer"><a href="/Products/Gold">Gold</a>  </h3>
         <ul className="mt-2 space-y-2 text-gray-500 text-base cursor-pointer" >
           <li className="hover:text-yellow-600 transition">Necklace</li>
           <li className="hover:text-yellow-600 transition ">Earrings</li>
@@ -76,7 +76,7 @@ const PricingContent = (
 
       {/* Silver Jewelry Section */}
       <div className="p-4   flex-1">
-        <h3 className="text-xl    cursor-pointer">Silver </h3>
+        <h3 className="text-xl    cursor-pointer"><a href="/Products/Silver">Silver</a> </h3>
         <ul className="mt-2 space-y-2 text-gray-700 text-base cursor-pointer">
           <li className="hover:text-gray-500 transition">Necklace</li>
           <li className="hover:text-gray-500 transition">Earrings</li>

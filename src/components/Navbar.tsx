@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <>
     <div className="h-20"></div>
-    <div className="h-20 bg-white px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64  fixed top-0 z-50 w-full">
+    <div className="h-20 bg-white/50 backdrop-blur-md px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64  fixed top-0 z-50 w-full">
 
 
       {/* Mobile */}
