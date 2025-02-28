@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Menu from "./Menu";
 import Image from "next/image";
-import SearchBar from "./SearchBar";
 import NavIcons from "./NavIcons";
 import FluOutLink from "./FluOutLink";
 import { useState } from "react";
@@ -16,7 +15,7 @@ const Navbar = () => {
       {/* Mobile */}
       <div className="h-full flex items-center justify-between md:hidden">
         <Link href="/">
-          <div className="text-2xl tracking-wide">lana</div>
+          <div className="text-2xl tracking-wide">lanaaa</div>
         </Link>
         <Menu />
       </div>
