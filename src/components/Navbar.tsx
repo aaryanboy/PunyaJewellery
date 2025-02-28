@@ -9,13 +9,15 @@ import { useState } from "react";
 
 const Navbar = () => {
   return (
-    <div className="h-20 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative">
+    <>
+    <div className="h-20"></div>
+    <div className="h-20 bg-white px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64  fixed top-0 z-50 w-full">
 
 
       {/* Mobile */}
       <div className="h-full flex items-center justify-between md:hidden">
         <Link href="/">
-          <div className="text-2xl tracking-wide">lanaaa</div>
+          <div className="text-2xl tracking-wide whitespace-nowrap font-serif">Punya Jewellery</div>
         </Link>
         <Menu />
       </div>
@@ -25,7 +27,7 @@ const Navbar = () => {
         <div className="w-1/3 xl:w-1/2 flex items-center gap-12">
           <Link href="/" className="flex items-center gap-3">
             <Image src="/mainlogo.png" alt="" width={54} height={54}  quality={100} />
-            <div className="text-2xl tracking-wide pr-3">Punya Jewellery</div>
+            <div className="text-2xl tracking-wide pr-3 whitespace-nowrap font-serif">Punya Jewellery</div>
           </Link>
           
           <FluOutLink />
@@ -44,7 +46,9 @@ const Navbar = () => {
         </div>
       </div>
     </div>
+    </>
   );
+
 };
 
 export default Navbar;

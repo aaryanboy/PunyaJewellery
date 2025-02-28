@@ -96,14 +96,14 @@ const FluOutLink = () => {
 
 
   return (
-    <div className="flex items-center text-xl px-3 py-13 mt-5 z-30">
-    <FlyoutLink href="/"  >Home</FlyoutLink>
-    <div className="p-5"></div>
-    <FlyoutLink href="/about" >AboutUs</FlyoutLink>
-    <div className="p-5"></div>
-  
-    <FlyoutLink href=""  FlyoutContent={PricingContent} >Products</FlyoutLink>
+    <div className="flex items-center text-lg font-sans tracking-wide px-3 py-13 mt-5 z-30 whitespace-nowrap">
+    <FlyoutLink href="/">Home</FlyoutLink>
+    <div className="p-2"></div>
+    <FlyoutLink href="/about" >About Us</FlyoutLink>
+    <div className="p-2"></div>
+    <FlyoutLink href="" FlyoutContent={PricingContent} >Products</FlyoutLink>
   </div>
+  
   
   );
 };
