@@ -1,5 +1,6 @@
 import React, { ReactNode, useState} from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 interface FlyoutLinkProps {
   children: ReactNode;
@@ -25,12 +26,12 @@ const FlyoutLink: React.FC<FlyoutLinkProps> = ({ children, href, FlyoutContent }
       onMouseLeave={() => setOpen(false)}
       className="z-20 group relative h-fit w-fit"
     >
-      <a href={href}  onClick={handleClick} className="relative text-black">
+      <Link href={href}  onClick={handleClick} className="relative text-black">
         {children}
         <span style={{ transform: open ? "scaleX(1)" : "scaleX(0)" }}
           className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left rounded-full bg-indigo-300 transition-transform duration-300 ease-out"
         />
-      </a>
+      </Link>
 
       <AnimatePresence>
         {showFlyout && (
@@ -64,7 +65,7 @@ const PricingContent = (
     <div className="flex justify-between gap-8">
       {/* Gold Jewelry Section */}
       <div className="p-4 flex-1">
-        <h3 className="text-xl  cursor-pointer"><a href="/Products/Gold">Gold</a>  </h3>
+        <h3 className="text-xl  cursor-pointer"><Link href="/Products/Gold">Gold</Link>  </h3>
         <ul className="mt-2 space-y-2 text-gray-500 text-base cursor-pointer" >
           <li className="hover:text-yellow-600 transition">Necklace</li>
           <li className="hover:text-yellow-600 transition ">Earrings</li>
@@ -76,7 +77,7 @@ const PricingContent = (
 
       {/* Silver Jewelry Section */}
       <div className="p-4   flex-1">
-        <h3 className="text-xl    cursor-pointer"><a href="/Products/Silver">Silver</a> </h3>
+        <h3 className="text-xl    cursor-pointer"><Link href="/Products/Silver">Silver</Link> </h3>
         <ul className="mt-2 space-y-2 text-gray-700 text-base cursor-pointer">
           <li className="hover:text-gray-500 transition">Necklace</li>
           <li className="hover:text-gray-500 transition">Earrings</li>
