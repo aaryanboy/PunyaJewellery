@@ -1,4 +1,6 @@
 export const jewelryData = {
+
+  // if items added chang the amount no in paginationcontrol page which has 20 rn 
     gold: [
         {
             id: 'gold1',
