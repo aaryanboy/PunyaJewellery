@@ -6,7 +6,6 @@ import Image from "next/image";
 import NavIcons from "./NavIcons";
 import FluOutLink from "./FluOutLink";
 import { useState } from "react";
-
 const Navbar = () => {
   return (
     <>
