@@ -1,3 +1,4 @@
+'use client';
 import Image from "next/image";
 
 const pic = "/images/photos for video/DSC00442.jpg";  // Corrected path

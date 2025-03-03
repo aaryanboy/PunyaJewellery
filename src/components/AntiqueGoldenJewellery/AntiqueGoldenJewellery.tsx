@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 
 const image="/images/photos for video/DSC00165.jpg"
