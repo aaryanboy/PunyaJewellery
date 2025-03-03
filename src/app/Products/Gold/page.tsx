@@ -1,3 +1,5 @@
+
+
 import PaginationControls from '@/components/PaginationControls'
 import { jewelryData } from '@/data/jewelryData'
 
