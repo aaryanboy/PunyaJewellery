@@ -91,29 +91,29 @@ const GoldSilverPriceApi: React.FC = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-100 rounded-lg shadow-md max-w-md mx-auto">
+    <div className="flex  font-light gap-4  ">
       {isClient && goldPrice && silverPrice ? (
         <>
           <button
             onClick={() => setIsGram(!isGram)}
-            className="mb-4 p-2 bg-blue-500 text-white rounded"
+            className="  bg-blue-500 text-white "
           >
-            {isGram ? "Switch to Tola" : "Switch to Gram"}
+            {isGram ? "Tola" : "Gram"}
           </button>
-          <div className="mb-4 p-4 bg-white rounded-lg shadow">
+          <div className="">
             <h2 className="text-lg font-semibold text-yellow-600">Gold</h2>
             <p className="text-gray-700">
               {isGram
-                ? `10 Gram: NPR ${goldPrice.per10gram}`
-                : `1 Tola: NPR ${goldPrice.per1tola}`}
+                ? `NPR ${goldPrice.per10gram}`
+                : `NPR ${goldPrice.per1tola}`}
             </p>
           </div>
-          <div className="p-4 bg-white rounded-lg shadow">
+          <div className="">
             <h2 className="text-lg font-semibold text-gray-500">Silver</h2>
             <p className="text-gray-700">
               {isGram
-                ? `10 Gram: NPR ${silverPrice.per10gram}`
-                : `1 Tola: NPR ${silverPrice.per1tola}`}
+                ? `NPR ${silverPrice.per10gram}`
+                : `NPR ${silverPrice.per1tola}`}
             </p>
           </div>
         </>
