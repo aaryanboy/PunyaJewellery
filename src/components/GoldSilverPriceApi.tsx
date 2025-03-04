@@ -96,7 +96,7 @@ const GoldSilverPriceApi: React.FC = () => {
         <>
           <button
             onClick={() => setIsGram(!isGram)}
-            className="  bg-blue-500 text-white "
+            className="  bg-blue-500 text-white  min-w-[60px]"
           >
             {isGram ? "Tola" : "Gram"}
           </button>
