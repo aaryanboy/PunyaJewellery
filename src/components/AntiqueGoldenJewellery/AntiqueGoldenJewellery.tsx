@@ -10,7 +10,7 @@ const AntiqueGoldenJewellery: React.FC = () => {
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
       <div className="image-wrapper w-full md:w-1/2 flex justify-center mb-8 md:mb-0 relative">
   {/* Black Background */}
-  <div className="bg-gray-300 absolute top-20 left-0 w-full h-full"></div>
+  <div className="bg-red-100  absolute top-20 left-0 w-full h-full"></div>
 
   {/* Image Container */}
   <div className="p-4 relative" style={{ width: '550px', height: '500px' }}>

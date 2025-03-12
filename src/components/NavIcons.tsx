@@ -11,25 +11,27 @@ const NavIcons = () => {
     const [isCartOpen, setIsCartOpen] = useState(false);
     return (
         <div className="flex items-center gap-4 xl:gap-6">
+       
+            <a href="https://wa.me/9847465703" target="_blank" rel="noopener noreferrer">
+                <i className="fa-brands fa-whatsapp text-4xl"></i>
+            </a>
 
-            {/* contact us image */}
-           <Image src="/profile.png" alt="" width={22} height={22} className="cursor-pointer"/>
-           
+            <Link href="/ContactUs">
+            
+                <i className="fa-regular fa-address-card text-4xl"></i>
         
-
-
-           <Image src="/notification.png" alt="" width={22} height={22} className="cursor-pointer"/>
-
-
-            {/* favourates */}
+            </Link>
+        
+            {/* 
+            {/* favourates 
            <div className="relative cursor-pointer">
-           <Image src="/cart.png" alt="" width={22} height={22}  onClick={()=>setIsCartOpen ((prev)=>!prev)}/>
+           <Image src="/star.png" alt="" width={22} height={22}  onClick={()=>setIsCartOpen ((prev)=>!prev)}/>
            <div className="absolute -top-4 -right-4 w-6 h-6 bg-notification rounded-full text-white text-sm flex items-center justify-center">5</div>
            </div>
             {isCartOpen && (
                 <div className="relative"><CartModel/></div>
                 
-            )}
+            )} */}
 
 
         </div>
