@@ -1,3 +1,8 @@
+// big single image is this
+
+
+
+
 'use client';
 import Image from "next/image";
 
@@ -13,6 +18,7 @@ const Images = () => {
         style={{ objectFit: 'contain' }} // Using CSS objectFit property
         quality={100}
       />
+      
     </div>
   );
 }

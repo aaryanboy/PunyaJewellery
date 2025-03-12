@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Image from 'next/image';
 
 const image="/images/photos for video/DSC00165.jpg"
 
@@ -7,17 +8,22 @@ const AntiqueGoldenJewellery: React.FC = () => {
   return (
     <section className="antique-golden-jewellery py-12">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
-        <div className="image-wrapper w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
-          <div className="bg-gray-200 p-4 relative" style={{ width: '300px', height: '300px' }}>
-            <img
-              src={image}
-              alt="Antique Bridal Jewellery in Nepal"
-              className="object-cover w-full h-full"
-            />
-          </div>
+      <div className="image-wrapper w-full md:w-1/2 flex justify-center mb-8 md:mb-0 relative">
+  {/* Black Background */}
+  <div className="bg-gray-300 absolute top-20 left-0 w-full h-full"></div>
 
+  {/* Image Container */}
+  <div className="p-4 relative" style={{ width: '550px', height: '500px' }}>
+    <Image
+      src={image}
+      alt="Antique Bridal Jewellery in Nepal"
+      width={550}
+      height={500}
+      className="object-cover w-full h-full relative"
+    />
+  </div>
+</div>
 
-        </div>
         <div className="content w-full md:w-1/2 md:pl-9">
           <h2 className="text-3xl font-bold mb-4">Antique Golden Jewellery</h2>
           <p className="mb-4">
