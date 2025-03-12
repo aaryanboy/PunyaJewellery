@@ -6,7 +6,6 @@ import Image from "next/image";
 import NavIcons from "./NavIcons";
 import FluOutLink from "./FluOutLink";
 import { useState } from "react";
-import GoldSilverPriceApi from "./GoldSilverPriceApi";
 const Navbar = () => {
   return (
     <>
@@ -28,20 +27,23 @@ const Navbar = () => {
       <div className="hidden md:flex items-center justify-between gap-8 h-full">
         {/* Left */}
         <div className="w-1/3 xl:w-1/2 flex items-center gap-12">
-          <Link href="/" className="flex items-center gap-3">
-            <Image src="/mainlogo.png" alt="" width={54} height={54}  quality={100} />
-            <div className="text-2xl tracking-wide pr-3 whitespace-nowrap font-serif">Punya Jewellery</div>
-          </Link>
+        <Link href="/" className="flex items-center gap-3">
+  <Image src="/logonobackground.png" alt="" width={54} height={54} quality={100} />
+  <div className="hidden lg:block text-2xl tracking-wide pr-3 whitespace-nowrap font-serif">
+    Punya Jewellery
+  </div>
+</Link>
+
           
           <FluOutLink />
-
-
 
 
         </div>
 
         {/* Right */}
-        <div className="w-2/3 xl:w-1/2 flex items-center justify-end gap-8">
+        <div className="w-2/3 xl:w-1/2 flex items-center justify-end gap-8">   
+            
+
           {/* <div className="hidden xl:flex">
             <SearchBar />
           </div> */}
@@ -49,7 +51,7 @@ const Navbar = () => {
 
            {/* GLOD PRICES CHANGES AT 11 AM EVERYDAY EXPLANE THIS? */}
     {/* helllo worls */}
-    <GoldSilverPriceApi />
+    
         </div>
       </div>
     </div>

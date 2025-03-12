@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from "react";
 
 interface PriceData {
@@ -91,16 +92,11 @@ const GoldSilverPriceApi: React.FC = () => {
   };
 
   return (
-    <div className="flex  font-light gap-4  ">
+    <div className=" flex  font-light gap-4  items-center justify-center bg-yellow-100 border-t-2 border-b-2 border-gray">
       {isClient && goldPrice && silverPrice ? (
         <>
-          <button
-            onClick={() => setIsGram(!isGram)}
-            className="  bg-blue-500 text-white  min-w-[60px]"
-          >
-            {isGram ? "Tola" : "Gram"}
-          </button>
-          <div className="">
+          
+          <div className="flex gap-5">
             <h2 className="text-lg font-semibold text-yellow-600">Gold</h2>
             <p className="text-gray-700">
               {isGram
@@ -108,7 +104,7 @@ const GoldSilverPriceApi: React.FC = () => {
                 : `NPR ${goldPrice.per1tola}`}
             </p>
           </div>
-          <div className="">
+          <div className=" flex gap-5 ">
             <h2 className="text-lg font-semibold text-gray-500">Silver</h2>
             <p className="text-gray-700">
               {isGram
@@ -116,6 +112,12 @@ const GoldSilverPriceApi: React.FC = () => {
                 : `NPR ${silverPrice.per1tola}`}
             </p>
           </div>
+          <button
+            onClick={() => setIsGram(!isGram)}
+            className="  bg-gray-500 text-white  min-w-[80px] rounded-md "
+          >
+            {isGram ? "Tola" : "Gram"}
+          </button>
         </>
       ) : (
         <p className="text-center text-gray-500">Loading prices...</p>
