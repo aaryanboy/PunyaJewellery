@@ -1,17 +1,17 @@
-
-export default function Blogdetails({ 
-    params, 
-}: { 
-    params: { blogId: string };
- }) {
-    
-    // const blogId = params.blogId; // Destructure the blogId from params
+export default async function Blogdetails(
+    props: {
+        params: Promise<{ blogId: string }>;
+    }
+) {
+    const params = await props.params;
+    // Await the params before using them
+    const { blogId } = params;
 
     console.log("hello world");
 
     return (
         <>
-            <h1 className="p-10">{params.blogId}</h1>
+            <h1 className="p-10">{blogId}</h1>
         </>
     );
 }

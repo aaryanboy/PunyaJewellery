@@ -23,11 +23,12 @@ const data = [
   'entry 20',
 ]
 
-export default function Home({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined }
-}) {
+export default async function Home(
+  props: {
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+  }
+) {
+  const searchParams = await props.searchParams;
   const page = searchParams['page'] ?? '1'
   const per_page = searchParams['per_page'] ?? '5'
 
