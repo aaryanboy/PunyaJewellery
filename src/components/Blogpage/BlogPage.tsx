@@ -2,8 +2,29 @@
 import { jewelryData } from "@/data/jewelryData";
 import Link from "next/link";
 
+// Define types for blog data
+interface BlogPost {
+  id: string;
+  title: string;
+  img: string;
+  date: string;
+  author: string;
+  category: string;
+  tags: string[];
+  excerpt: string;
+  content: string;
+  relatedPosts: string[];
+  comments: { user: string; text: string; date: string }[];
+  likes: number;
+  readingTime: number;
+}
+
+interface BlogPageProps {
+  blogPosts: BlogPost[];
+}
+
 export default function BlogPage() {
-  const blogPosts = jewelryData.blogData || [];
+  const blogPosts: BlogPost[] = jewelryData.blogData || [];
 
   return (
     <div className="flex flex-col items-center p-6">
