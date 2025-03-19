@@ -1,17 +1,22 @@
+import React from 'react';
+import { jewelryData } from '@/data/jewelryData'; // Import data
+import BlogDetailData from '@/components/Blogpage/BlogDetailData';
+
 export default async function Blogdetails(
-    props: {
-        params: Promise<{ blogId: string }>;
-    }
+  props: {
+    params: Promise<{ blogId: string }>;
+  }
 ) {
-    const params = await props.params;
-    // Await the params before using them
-    const { blogId } = params;
+  const params = await props.params;
+  const { blogId } = params;
 
-    console.log("hello world");
+ // Find the blog data based on the blogId
+const blogData = jewelryData.blogData.find((post) => post.id === blogId);
 
-    return (
-        <>
-            <h1 className="p-10">{blogId}</h1>
-        </>
-    );
+
+  if (!blogData) {
+    return <div>Blog not found</div>;
+  }
+
+  return <BlogDetailData blogData={blogData} />;
 }
