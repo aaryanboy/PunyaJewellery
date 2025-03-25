@@ -1,3 +1,4 @@
+// /components/Blogpage/BlogDetailData.tsx
 import React from 'react';
 
 interface BlogDetailDataProps {

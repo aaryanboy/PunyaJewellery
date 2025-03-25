@@ -1,21 +1,16 @@
 "use client"
 import PaginationControls from '@/components/PaginationControls'
 import { jewelryData } from '@/data/jewelryData'
-import { use } from 'react';
+import { useSearchParams } from 'next/navigation'
 
-export default function Gold({
-  searchParams = {},
-}: {
-  searchParams?: { [key: string]: string | string[] | undefined }
-}) {
-  // Ensure searchParams are properly handled
-  const page = Number(searchParams?.page) || 1;
-  const perPage = Number(searchParams?.per_page) || 8;
+export default function Gold() {
+  // Get updated search parameters using the hook
+  const searchParams = useSearchParams();
+  const page = Number(searchParams.get('page')) || 1;
+  const perPage = Number(searchParams.get('per_page')) || 8;
 
-  // Define the category path
-  const path = '/Products/Gold'; // Change to '/products/gold' for gold page
+  const path = '/Products/Gold'; // Ensure this matches your actual route
 
-  // Get the relevant jewelry data
   const data = jewelryData.gold || [];
 
   // Calculate pagination
@@ -56,5 +51,3 @@ export default function Gold({
     </div>
   );
 }
-
-

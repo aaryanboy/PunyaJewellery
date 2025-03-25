@@ -1,19 +1,18 @@
+"use client"
 import PaginationControls from '@/components/PaginationControls'
 import { jewelryData } from '@/data/jewelryData'
+import { useSearchParams } from 'next/navigation'
 
-export default function Silver({
-  searchParams,
-}: {
-  searchParams?: { [key: string]: string | string[] | undefined }
-}) {
-  // Ensure searchParams exists and parse values safely
-  const page = Number(searchParams?.page) || 1;
-  const perPage = Number(searchParams?.per_page) || 8;
+export default function Silver() {
+  // Get updated query parameters from the URL
+  const searchParams = useSearchParams();
+  const page = Number(searchParams.get('page')) || 1;
+  const perPage = Number(searchParams.get('per_page')) || 8;
 
-  // Manually define the path (change it for different pages)
-  const path = '/Products/Silver'; // Change to '/products/Silver' for silver page
+  // Define the route path
+  const path = '/Products/Silver';
 
-  // Get the relevant jewelry data based on the category
+  // Get the silver jewelry data
   const data = jewelryData.silver || [];
 
   // Calculate pagination
@@ -49,7 +48,7 @@ export default function Silver({
       <PaginationControls
         hasNextPage={end < data.length}
         hasPrevPage={start > 0}
-        categoryPath={path} // Pass the manually defined path
+        categoryPath={path}
       />
     </div>
   );

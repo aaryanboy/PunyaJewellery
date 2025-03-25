@@ -1,30 +1,13 @@
+// /components/Blogpage/BlogPage.tsx
 "use client";
-import { jewelryData } from "@/data/jewelryData";
+
+import React from 'react';
 import Link from "next/link";
+import { blogData, BlogPost } from "@/data/blogData"; // Updated import
 
-// Define types for blog data
-interface BlogPost {
-  id: string;
-  title: string;
-  img: string;
-  date: string;
-  author: string;
-  category: string;
-  tags: string[];
-  excerpt: string;
-  content: string;
-  relatedPosts: string[];
-  comments: { user: string; text: string; date: string }[];
-  likes: number;
-  readingTime: number;
-}
-
-interface BlogPageProps {
-  blogPosts: BlogPost[];
-}
-
-export default function BlogPage() {
-  const blogPosts: BlogPost[] = jewelryData.blogData || [];
+const BlogPage: React.FC = () => {
+  // Since blogData is now an array of BlogPost objects, we use it directly.
+  const blogPosts: BlogPost[] = blogData;
 
   return (
     <div className="flex flex-col items-center p-6">
@@ -63,4 +46,6 @@ export default function BlogPage() {
       </div>
     </div>
   );
-}
+};
+
+export default BlogPage;
