@@ -5,6 +5,7 @@ import SpecialtySection from "@/components/Middlepage/SpecialtySection "
 import AntiqueGoldenJewellery2 from "@/components/AntiqueGoldenJewellery/AntiqueGoldenJewellery2"
 
 import AntiqueGoldenJewellery from "@/components/AntiqueGoldenJewellery/AntiqueGoldenJewellery"
+import BlogSection from "@/components/Blogpage/BlogSection"
 
 
 const HomePage = () => {
@@ -21,7 +22,14 @@ const HomePage = () => {
       <NewArrival/>
       <Images/>
       <AntiqueGoldenJewellery2/>
-      <div className="m-10"></div>
+      <div className="m-50 p-10">jhj</div>
+
+
+      <BlogSection/>
+
+
+      <div className="m-50 p-10">hjh</div>
+    
       
 
     </div> 
