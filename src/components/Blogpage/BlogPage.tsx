@@ -30,10 +30,7 @@ const BlogPage: React.FC = () => {
               By {post.author} | {post.date} | {post.category}
             </p>
             <p className="text-gray-700">{post.excerpt}</p>
-            <div className="flex justify-between items-center mt-4">
-              <p className="text-sm text-gray-500">{post.readingTime} min read</p>
-              <p className="text-sm text-gray-500">{post.likes} ❤️</p>
-            </div>
+           
 
             {/* Read More Button with Link to Details Page */}
             <Link href={`/blogs/${post.id}`}>

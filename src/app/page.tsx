@@ -21,14 +21,14 @@ const HomePage = () => {
 
       <NewArrival/>
       <Images/>
+      <SpecialtySection/>
       <AntiqueGoldenJewellery2/>
-      <div className="m-50 p-10">jhj</div>
 
 
       <BlogSection/>
 
 
-      <div className="m-50 p-10">hjh</div>
+      
     
       
 

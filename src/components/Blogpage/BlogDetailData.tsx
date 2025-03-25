@@ -39,24 +39,8 @@ const BlogDetailData: React.FC<BlogDetailDataProps> = ({ blogData }) => {
         ))}
       </div>
 
-      <div className="text-sm text-gray-500 mb-6">
-        <span>Likes: {blogData.likes}</span> | <span>Reading Time: {blogData.readingTime} min</span>
-      </div>
 
-      <div className="mt-12">
-        <h3 className="text-2xl font-semibold mb-4">Comments</h3>
-        {blogData.comments.length === 0 ? (
-          <p>No comments yet. Be the first to comment!</p>
-        ) : (
-          blogData.comments.map((comment, index) => (
-            <div key={index} className="bg-gray-100 p-4 mb-4 rounded-lg">
-              <strong className="text-lg">{comment.user}</strong>
-              <p className="text-gray-700 mt-2">{comment.text}</p>
-              <small className="text-gray-500 block mt-2">{comment.date}</small>
-            </div>
-          ))
-        )}
-      </div>
+     
     </div>
   );
 };
