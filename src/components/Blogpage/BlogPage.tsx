@@ -1,12 +1,11 @@
-// /components/Blogpage/BlogPage.tsx
 "use client";
 
 import React from 'react';
 import Link from "next/link";
-import { blogData, BlogPost } from "@/data/blogData"; // Updated import
+import Image from "next/image"; // Import Next.js Image component
+import { blogData, BlogPost } from "@/data/blogData";
 
 const BlogPage: React.FC = () => {
-  // Since blogData is now an array of BlogPost objects, we use it directly.
   const blogPosts: BlogPost[] = blogData;
 
   return (
@@ -20,17 +19,22 @@ const BlogPage: React.FC = () => {
             key={post.id}
             className="p-4 border rounded-lg shadow-md hover:shadow-xl transition duration-300 bg-white"
           >
-            <img
-              src={post.img}
-              alt={post.title}
-              className="w-full h-48 object-cover rounded-md mb-4"
-            />
+            {/* Use Next.js Image component */}
+            <div className="relative w-full h-48 mb-4">
+              <Image
+                src={post.img}
+                alt={post.title}
+                fill // Makes image responsive
+                
+                className="rounded-md object-cover"
+              />
+            </div>
+
             <h2 className="text-2xl font-semibold text-gray-800">{post.title}</h2>
             <p className="text-gray-500 text-sm mb-2">
               By {post.author} | {post.date} | {post.category}
             </p>
             <p className="text-gray-700">{post.excerpt}</p>
-           
 
             {/* Read More Button with Link to Details Page */}
             <Link href={`/blogs/${post.id}`}>
@@ -43,6 +47,6 @@ const BlogPage: React.FC = () => {
       </div>
     </div>
   );
-};
+};  
 
 export default BlogPage;

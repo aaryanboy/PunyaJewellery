@@ -1,16 +1,17 @@
-"use client"
-import PaginationControls from '@/components/PaginationControls'
-import { jewelryData } from '@/data/jewelryData'
-import { useSearchParams } from 'next/navigation'
+"use client";
+import PaginationControls from "@/components/PaginationControls";
+import { jewelryData } from "@/data/jewelryData";
+import { useSearchParams } from "next/navigation";
+import Image from "next/image"; // Import Next.js Image component
 
 export default function Silver() {
   // Get updated query parameters from the URL
   const searchParams = useSearchParams();
-  const page = Number(searchParams.get('page')) || 1;
-  const perPage = Number(searchParams.get('per_page')) || 8;
+  const page = Number(searchParams.get("page")) || 1;
+  const perPage = Number(searchParams.get("per_page")) || 8;
 
   // Define the route path
-  const path = '/Products/Silver';
+  const path = "/Products/Silver";
 
   // Get the silver jewelry data
   const data = jewelryData.silver || [];
@@ -29,12 +30,18 @@ export default function Silver() {
             key={item.id}
             className="product-item p-4 border rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-white"
           >
-            <img
-              src={item.img}
-              alt={item.name}
-              className="w-full h-48 object-cover rounded-md mb-4"
-            />
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">{item.name}</h3>
+            <div className="relative w-full h-48">
+              <Image
+                src={item.img}
+                alt={item.name}
+                fill
+                className="rounded-md object-cover"
+                priority={false} // Set priority based on need
+              />
+            </div>
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              {item.name}
+            </h3>
             <p className="text-gray-600 text-sm mb-2">{item.description}</p>
             <div className="flex justify-between items-center text-gray-700">
               <p className="font-bold text-lg">Price: ${item.price}</p>

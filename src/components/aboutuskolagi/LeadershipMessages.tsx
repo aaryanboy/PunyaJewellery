@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const LeadershipMessages: React.FC = () => (
   <section className="py-12">
@@ -8,10 +9,12 @@ const LeadershipMessages: React.FC = () => (
         {/* First Profile */}
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="flex-shrink-0">
-            <img 
+            <Image 
               src="/images/photos%20for%20video/DSC00165.jpg" 
               alt="Punya Kaji Bajracharya" 
-              className="w-48 h-48 object-cover rounded-md shadow-lg" 
+              width={192}  // Adjust as needed
+              height={192} // Adjust as needed
+              className="object-cover rounded-md shadow-lg"
             />
           </div>
           <div className="text-center md:text-left">
@@ -24,10 +27,12 @@ const LeadershipMessages: React.FC = () => (
         {/* Second Profile */}
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="flex-shrink-0">
-            <img 
+            <Image 
               src="/images/photos%20for%20video/DSC00165.jpg" 
               alt="Mangita Shakya Bajracharya" 
-              className="w-48 h-48 object-cover rounded-md shadow-lg" 
+              width={192}  
+              height={192} 
+              className="object-cover rounded-md shadow-lg"
             />
           </div>
           <div className="text-center md:text-left">

@@ -1,6 +1,6 @@
-// /components/BlogSection.tsx
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { blogData, BlogPost } from '@/data/blogData';
 
 const BlogSection: React.FC = () => {
@@ -16,13 +16,17 @@ const BlogSection: React.FC = () => {
         {featuredPosts.map((post) => (
           <div key={post.id} className="m-2 sm:m-4 w-full">
             <Link href={`/blogs/${post.id}`} className="group block relative cursor-pointer">
-              <img 
-                src={post.img} 
-                alt={post.title} 
-                className="w-full sm:w-[350px] md:w-[300px] lg:w-[400px] xl:w-[350px] h-[300px] sm:h-[300px] md:h-[250px] lg:h-[300px] object-cover rounded-lg"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 rounded-lg">
-                <span className="text-white font-semibold text-lg">Expand</span>
+              <div className="relative w-full sm:w-[150px] md:w-[200px] lg:w-[250px] xl:w-[300px] h-[100px] sm:h-[120px] md:h-[250px] lg:h-[280px] xl:h-[300px]">
+                <Image 
+                  src={post.img} 
+                  alt={post.title} 
+                  fill
+                 
+                  className="rounded-lg object-cover object-top"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 rounded-lg">
+                  <span className="text-white font-semibold text-lg">Expand</span>
+                </div>
               </div>
             </Link>
             <h3 className="text-xl font-semibold mt-4 text-center px-2">{post.title}</h3>

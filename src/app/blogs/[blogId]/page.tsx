@@ -1,7 +1,7 @@
-// /pages/blogs/[blogId].tsx
 import React from 'react';
 import { blogData, BlogPost } from '@/data/blogData'; // Updated import
 import BlogDetailData from '@/components/Blogpage/BlogDetailData';
+import RelatedPosts from '@/components/Blogpage/RelatedPosts'; // Import the new component
 
 export default async function BlogDetails(
   props: { params: Promise<{ blogId: string }> }
@@ -16,5 +16,12 @@ export default async function BlogDetails(
     return <div>Blog not found</div>;
   }
 
-  return <BlogDetailData blogData={blogDataItem} />;
+  // Fix blog data format
+  return (
+    <div>
+      <BlogDetailData blogData={blogDataItem} />
+      {/* Pass relatedPosts and blogData to the RelatedPosts component */}
+      <RelatedPosts relatedPosts={blogDataItem.relatedPosts} blogData={blogData} />
+    </div>
+  );
 }

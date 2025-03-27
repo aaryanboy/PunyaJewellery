@@ -1,28 +1,30 @@
-// /components/Blogpage/BlogDetailData.tsx
 import React from 'react';
+import Image from 'next/image';
+import { BlogPost } from '@/data/blogData'; // Import BlogPost type from your data file
 
 interface BlogDetailDataProps {
-  blogData: {
-    title: string;
-    img: string;
-    date: string;
-    author: string;
-    category: string;
-    tags: string[];
-    content: string;
-    relatedPosts: string[];
-    comments: { user: string; text: string; date: string }[];
-    likes: number;
-    readingTime: number;
-  };
+  blogData: BlogPost; // Use the BlogPost type for the prop
 }
 
 const BlogDetailData: React.FC<BlogDetailDataProps> = ({ blogData }) => {
+  const imageSrc = blogData.img || null; // Check if the image URL is empty, set to null if empty
+
   return (
     <div className="max-w-3xl mx-auto p-6 font-sans">
       <h1 className="text-4xl font-bold mb-6">{blogData.title}</h1>
-      <img className="w-full h-auto mb-6" src={blogData.img} alt={blogData.title} />
       
+      {imageSrc && ( // Conditionally render the Image component if src is valid
+        <div className="relative w-full h-64 mb-6">
+          <Image 
+            src={imageSrc} 
+            alt={blogData.title} 
+            fill // Makes the image responsive
+           
+            className="rounded-lg object-cover"
+          />
+        </div>
+      )}
+
       <div className="text-gray-600 text-sm mb-4">
         <span>{blogData.date}</span> | <span>{blogData.author}</span> | <span>{blogData.category}</span>
       </div>
@@ -38,7 +40,6 @@ const BlogDetailData: React.FC<BlogDetailDataProps> = ({ blogData }) => {
           </span>
         ))}
       </div>
-
 
      
     </div>

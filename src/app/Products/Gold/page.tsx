@@ -1,17 +1,13 @@
-import Gold from "@/components/Gold"
+"use client";
+import { Suspense } from "react"; // Import Suspense
+import Gold from "@/components/Gold";
 
 const GoldPage = () => {
   return (
-   
-    
-    <div className=''>
-      <Gold/>
-      
+    <Suspense fallback={<div>Loading...</div>}>
+      <Gold />
+    </Suspense>
+  );
+};
 
-    </div> 
-     
-  )
- 
-}
-
-export default GoldPage
+export default GoldPage;

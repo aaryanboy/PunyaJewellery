@@ -1,17 +1,13 @@
-import Silver from "@/components/Silver"
+"use client";
+import { Suspense } from "react";
+import Silver from "@/components/Silver";
 
 const SilverPage = () => {
   return (
-   
-    
-    <div className=''>
-      <Silver/>
-      
+    <Suspense fallback={<div>Loading...</div>}>
+      <Silver />
+    </Suspense>
+  );
+};
 
-    </div> 
-     
-  )
- 
-}
-
-export default SilverPage
+export default SilverPage;

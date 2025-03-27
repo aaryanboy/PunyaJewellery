@@ -50,8 +50,8 @@ const NewArrivals: React.FC = () => (
         src={item.src}
         alt={item.alt}
         fill
-        objectFit="cover"
-        className="rounded-lg"
+        sizes="(max-width: 768px) 100vw, 50vw"
+        className="rounded-lg object-cover"
         priority={index < 2} // Prioritize loading the first 2 images
       />
     </div>

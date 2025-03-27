@@ -16,7 +16,7 @@ const FlyoutLink: React.FC<FlyoutLinkProps> = ({ children, href, FlyoutContent }
   // Handle both hover and touch interactions
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     if (FlyoutContent) {
-      e.preventDefault(); // Prevent page reload
+      // e.preventDefault(); // Prevent page reload
       setOpen((prev) => !prev); // Toggle dropdown
     }
   };
@@ -68,9 +68,7 @@ const PricingContent = (
       <div className="p-4 flex-1">
         <h3 className="text-xl  cursor-pointer"><Link href="/Products/Gold">Gold</Link>  </h3>
         <ul className="mt-2 space-y-2 text-gray-500 text-base cursor-pointer" >
-          <li className="hover:text-yellow-600 transition">Necklace</li>
           <li className="hover:text-yellow-600 transition ">Earrings</li>
-          <li className="hover:text-yellow-600 transition">Bracelet</li>
           <li className="hover:text-yellow-600 transition">Ring</li>
           <li className="hover:text-yellow-600 transition">Anklet</li>
         </ul>
@@ -84,7 +82,6 @@ const PricingContent = (
           <li className="hover:text-gray-500 transition">Earrings</li>
           <li className="hover:text-gray-500 transition"> Bracelet</li>
           <li className="hover:text-gray-500 transition"> Ring</li>
-          <li className="hover:text-gray-500 transition"> Anklet</li>
         </ul>
       </div>
     </div>
@@ -104,7 +101,7 @@ const FluOutLink = () => {
     <FlyoutLink href="/about" >About Us</FlyoutLink>
     <div className="p-2"></div>
     
-    <FlyoutLink href="" FlyoutContent={PricingContent} >Products</FlyoutLink>
+    <FlyoutLink href="/Products" FlyoutContent={PricingContent} >Products</FlyoutLink>
      <div className="p-2"></div>
     <FlyoutLink href="/blogs" >Blogs</FlyoutLink>
    

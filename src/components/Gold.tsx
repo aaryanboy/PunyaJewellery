@@ -1,7 +1,8 @@
-"use client"
-import PaginationControls from '@/components/PaginationControls'
-import { jewelryData } from '@/data/jewelryData'
-import { useSearchParams } from 'next/navigation'
+"use client";
+import PaginationControls from '@/components/PaginationControls';
+import { jewelryData } from '@/data/jewelryData';
+import { useSearchParams } from 'next/navigation';
+import Image from 'next/image'; // Import Next.js Image component
 
 export default function Gold() {
   // Get updated search parameters using the hook
@@ -10,7 +11,6 @@ export default function Gold() {
   const perPage = Number(searchParams.get('per_page')) || 8;
 
   const path = '/Products/Gold'; // Ensure this matches your actual route
-
   const data = jewelryData.gold || [];
 
   // Calculate pagination
@@ -26,12 +26,18 @@ export default function Gold() {
           <div
             key={item.id}
             className="product-item p-4 border rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-white"
+            onClick={() => console.log('Clicked Item Key:', item.id)}
           >
-            <img
-              src={item.img}
-              alt={item.name}
-              className="w-full h-48 object-cover rounded-md mb-4"
-            />
+            <div className="relative w-full h-48">
+              <Image
+                src={item.img}
+                alt={item.name}
+                fill
+               
+                className="rounded-md  object-cover"
+                priority={true} // Optimize LCP by loading important images first
+              />
+            </div>
             <h3 className="text-xl font-semibold text-gray-800 mb-2">{item.name}</h3>
             <p className="text-gray-600 text-sm mb-2">{item.description}</p>
             <div className="flex justify-between items-center text-gray-700">
