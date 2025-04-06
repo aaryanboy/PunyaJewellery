@@ -21,6 +21,7 @@ export default async function BlogDetails(
     <div>
       <BlogDetailData blogData={blogDataItem} />
       {/* Pass relatedPosts and blogData to the RelatedPosts component */}
+      
       <RelatedPosts relatedPosts={blogDataItem.relatedPosts} blogData={blogData} />
     </div>
   );
