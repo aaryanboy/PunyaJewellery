@@ -5,8 +5,9 @@ const FullscreenProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
-  // Find the product based on the ID
-  const product = jewelryData.find((item) => item.id.toString() === id);
+  // Flatten all product arrays into one
+  const allProducts = Object.values(jewelryData).flat();
+  const product = allProducts.find((item) => item.id === id);
 
   if (!product) {
     return <div className="text-center text-red-500">Product not found</div>;
@@ -15,7 +16,7 @@ const FullscreenProductDetail: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100 p-4">
       <div className="relative bg-white shadow-lg rounded-lg max-w-2xl p-6 text-center">
-        <img src={product.image} alt={product.name} className="w-full h-80 object-cover rounded-md" />
+        <img src={product.img} alt={product.name} className="w-full h-80 object-cover rounded-md" />
         <h2 className="text-2xl font-bold mt-4">{product.name}</h2>
         <p className="text-gray-600 text-lg">{product.description}</p>
         <p className="text-lg font-semibold text-green-600 mt-2">${product.price}</p>
