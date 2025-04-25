@@ -101,7 +101,7 @@ const FluOutLink = () => {
     <FlyoutLink href="/about" >About Us</FlyoutLink>
     <div className="p-2"></div>
     
-    <FlyoutLink href="/Products" FlyoutContent={PricingContent} >Products</FlyoutLink>
+    <FlyoutLink href="/products" FlyoutContent={PricingContent} >Products</FlyoutLink>
      <div className="p-2"></div>
     <FlyoutLink href="/blogs" >Blogs</FlyoutLink>
    
