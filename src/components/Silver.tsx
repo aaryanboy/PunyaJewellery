@@ -2,33 +2,42 @@
 import PaginationControls from "@/components/PaginationControls";
 import { jewelryData } from "@/data/jewelryData";
 import { useSearchParams } from "next/navigation";
-import Image from "next/image"; // Import Next.js Image component
+import Image from "next/image";
+import Link from "next/link";
+
+// Define JewelryItem type (move to types/jewelry.ts if preferred)
+interface JewelryItem {
+  id: string;
+  name: string;
+  img: string;
+  price: number;
+  gram: number;
+  description: string;
+}
 
 export default function Silver() {
-  // Get updated query parameters from the URL
   const searchParams = useSearchParams();
   const page = Number(searchParams.get("page")) || 1;
   const perPage = Number(searchParams.get("per_page")) || 8;
 
-  // Define the route path
-  const path = "/Products/Silver";
-
-  // Get the silver jewelry data
-  const data = jewelryData.silver || [];
+  const path = "/products/silver";
+  const data: JewelryItem[] = jewelryData.silver || [];
 
   // Calculate pagination
   const start = (page - 1) * perPage;
   const end = start + perPage;
-  const entries = data.slice(start, end);
+  const entries: JewelryItem[] = data.slice(start, end);
 
   return (
     <div className="flex flex-col gap-4 items-center">
       {/* Jewelry Items Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-screen-xl mx-5">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-screen-xl">
         {entries.map((item) => (
-          <div
+          <Link
             key={item.id}
+            href={`/products/silver/${item.id}`}
             className="product-item p-4 border rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-white"
+            aria-label={`View details for ${item.name}`}
           >
             <div className="relative w-full h-48">
               <Image
@@ -36,18 +45,16 @@ export default function Silver() {
                 alt={item.name}
                 fill
                 className="rounded-md object-cover"
-                priority={false} // Set priority based on need
+                priority={true}
               />
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">
-              {item.name}
-            </h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">{item.name}</h3>
             <p className="text-gray-600 text-sm mb-2">{item.description}</p>
             <div className="flex justify-between items-center text-gray-700">
               <p className="font-bold text-lg">Price: ${item.price}</p>
               <p className="font-medium">{item.gram}g</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 

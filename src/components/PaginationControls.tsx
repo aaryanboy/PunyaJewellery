@@ -1,59 +1,47 @@
-'use client'
-
-import { FC } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
+"use client";
+import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
 interface PaginationControlsProps {
-  hasNextPage: boolean
-  hasPrevPage: boolean
-  categoryPath: string
+  hasNextPage: boolean;
+  hasPrevPage: boolean;
+  categoryPath: string;
 }
 
-const PaginationControls: FC<PaginationControlsProps> = (
-  {
-    hasNextPage,
-    hasPrevPage,
-    categoryPath
-  }
-) => {
-  const router = useRouter()
-  const searchParams = useSearchParams()
+export default function PaginationControls({
+  hasNextPage,
+  hasPrevPage,
+  categoryPath,
+}: PaginationControlsProps) {
+  const searchParams = useSearchParams();
+  const page = Number(searchParams.get("page")) || 1;
+  const perPage = Number(searchParams.get("per_page")) || 8;
 
-  // Get current page and per_page from the query parameters
-  const page = searchParams.get('page') ?? '1'
-  const per_page = searchParams.get('per_page') ?? '8'  // Changed default to 8
-
-  const totalItems = 20  // Adjust this according to your data
+  const prevPageUrl = `${categoryPath}?page=${page - 1}&per_page=${perPage}`;
+  const nextPageUrl = `${categoryPath}?page=${page + 1}&per_page=${perPage}`;
 
   return (
-    <div className='flex gap-2'>
-      {/* Previous Page Button */}
-      <button
-        className='bg-blue-500 text-white p-1'
-        disabled={!hasPrevPage}
-        onClick={() => {
-          // Navigate to the previous page dynamically for any category
-          router.push(`${categoryPath}?page=${Number(page) - 1}&per_page=${per_page}`)
-        }} >
-        prev page
-      </button>
-
-      <div>
-        {page} / {Math.ceil(totalItems / Number(per_page))} {/* Show current page and total pages */}
-      </div>
-
-      {/* Next Page Button */}
-      <button
-        className='bg-blue-500 text-white p-1'
-        disabled={!hasNextPage}
-        onClick={() => {
-          // Navigate to the next page dynamically for any category
-          router.push(`${categoryPath}?page=${Number(page) + 1}&per_page=${per_page}`)
-        }} >
-        next page
-      </button>
+    <div className="flex gap-4 mt-6">
+      <Link
+        href={prevPageUrl}
+        className={`px-4 py-2 rounded-md ${
+          hasPrevPage
+            ? "bg-blue-600 text-white hover:bg-blue-700"
+            : "bg-gray-300 text-gray-500 cursor-not-allowed"
+        }`}
+      >
+        Previous
+      </Link>
+      <Link
+        href={nextPageUrl}
+        className={`px-4 py-2 rounded-md ${
+          hasNextPage
+            ? "bg-blue-600 text-white hover:bg-blue-700"
+            : "bg-gray-300 text-gray-500 cursor-not-allowed"
+        }`}
+      >
+        Next
+      </Link>
     </div>
-  )
+  );
 }
-
-export default PaginationControls

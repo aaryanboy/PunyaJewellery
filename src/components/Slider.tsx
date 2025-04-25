@@ -14,7 +14,7 @@ const slides=[
         title:"Jewelry",
         img:"/images/photos for video/DSC00442.jpg",
         description:"",
-        url:"/",
+        url:"/products/gold",
         bg:" bg-gradient-to-r from-yellow-50 to-pink-50",
     },
     {
@@ -22,7 +22,7 @@ const slides=[
         title:"Rings",
         img:"/images/photos for video/DSC00163.jpg",
         description:"",
-        url:"/",
+        url:"/products/gold",
         bg:" bg-gradient-to-r from-gray-50 to-black-50",
     },
     {
@@ -30,7 +30,7 @@ const slides=[
         title:"Earrings",
         img:"/images/photos for video/DSC00395.jpg",       
         description:"",
-        url:"/",
+        url:"/products/gold",
         bg:" bg-gradient-to-r from-blue-50 to-white-50",
     }, 
 ]
