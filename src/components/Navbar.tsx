@@ -17,12 +17,20 @@ const Navbar = () => {
 
 
       {/* Mobile */}
-      <div className="h-full flex items-center justify-between md:hidden">
-        <Link href="/">
-          <div className="text-2xl tracking-wide whitespace-nowrap font-serif">Punya Jewellery</div>
+      <div className="h-full flex   items-center justify-between md:hidden">
+        
+        <Link href="/" >
+        <div className="flex items-center gap-2">
+  <Image src="/logonobackground.png" alt="" width={54} height={54} quality={100} />
+  <div className="text-2xl tracking-wide whitespace-nowrap font-serif">Punya Jewellery</div>
+</div>
+
         </Link>
+        
         <Menu />
       </div>
+
+      
       {/* Larger screens */}
       <div className="hidden md:flex items-center justify-between gap-8 h-full">
         {/* Left */}
