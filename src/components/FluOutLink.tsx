@@ -61,12 +61,12 @@ const FlyoutLink: React.FC<FlyoutLinkProps> = ({ children, href, FlyoutContent }
 
 // Flyout content components
 const PricingContent = (
-  <div className="h-auto w-[450px] bg-white bg-opacity-85 p-6 shadow-2xl rounded-lg border border-gray-200">
+  <div className="h-auto w-[450px] bg-white  p-6 shadow-2xl rounded-lg border border-gray-200">
  
     <div className="flex justify-between gap-8">
       {/* Gold Jewelry Section */}
       <div className="p-4 flex-1">
-        <h3 className="text-xl  cursor-pointer"><Link href="/Products/Gold">Gold</Link>  </h3>
+        <h3 className="text-xl  cursor-pointer"><Link href="/products/gold">Gold</Link>  </h3>
         <ul className="mt-2 space-y-2 text-gray-500 text-base cursor-pointer" >
           <li className="hover:text-yellow-600 transition ">Earrings</li>
           <li className="hover:text-yellow-600 transition">Ring</li>
@@ -76,7 +76,7 @@ const PricingContent = (
 
       {/* Silver Jewelry Section */}
       <div className="p-4   flex-1">
-        <h3 className="text-xl    cursor-pointer"><Link href="/Products/Silver">Silver</Link> </h3>
+        <h3 className="text-xl    cursor-pointer"><Link href="/products/silver">Silver</Link> </h3>
         <ul className="mt-2 space-y-2 text-gray-700 text-base cursor-pointer">
           <li className="hover:text-gray-500 transition">Necklace</li>
           <li className="hover:text-gray-500 transition">Earrings</li>

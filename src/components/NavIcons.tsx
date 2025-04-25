@@ -16,9 +16,9 @@ const NavIcons = () => {
                 <i className="fa-brands fa-whatsapp text-4xl"></i>
             </a>
 
-            <Link href="/ContactUs">
+            <Link href="/contactus">
             
-                <i className="fa-regular fa-address-card text-4xl"></i>
+               <div className="border-2 border-black rounded p-.5 hover:text-green-600 hover:border-green-600">ContactUs</div>
         
             </Link>
         
