@@ -19,7 +19,8 @@ interface ItemDetailProps {
   };
 }
 
-export default function ItemDetail({ params }: ItemDetailProps) {
+// ⭐ Add async here!
+export default async function ItemDetail({ params }: ItemDetailProps) {
   const { itemId } = params;
   const item: JewelryItem | undefined = jewelryData.gold.find(
     (item: JewelryItem) => item.id === itemId
