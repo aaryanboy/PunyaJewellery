@@ -17,10 +17,10 @@ const MobileMenu = ({ handleClose }: { handleClose: (href: string) => void }) =>
       </button>
       {isOpen && (
         <div className="mt-3 flex flex-col gap-2 text-lg">
-          <Link href="/products/gold" onClick={() => handleClose('/products/gold')}>
+          <Link href="/Products/Gold" onClick={() => handleClose('/Products/Gold')}>    {/* change this */}
             Gold
           </Link>
-          <Link href="/products/silver" onClick={() => handleClose('/products/silver')}>
+          <Link href="/Products/Silver" onClick={() => handleClose('/Products/Silver')}>
             Silver
           </Link>
         </div>

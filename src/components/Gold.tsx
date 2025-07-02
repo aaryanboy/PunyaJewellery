@@ -20,7 +20,7 @@ export default function Gold() {
   const page = Number(searchParams.get("page")) || 1;
   const perPage = Number(searchParams.get("per_page")) || 8;
 
-  const path = "/products/gold";
+  const path = "/Products/Gold";
   const data: JewelryItem[] = jewelryData.gold || [];
 
   // Calculate pagination
@@ -35,7 +35,7 @@ export default function Gold() {
         {entries.map((item) => (
           <Link
             key={item.id}
-            href={`/products/gold/${item.id}`}
+            href={`/Products/Gold/${item.id}`}
             className="product-item p-4 border rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-white"
             aria-label={`View details for ${item.name}`}
           >

@@ -20,7 +20,7 @@ export default function Silver() {
   const page = Number(searchParams.get("page")) || 1;
   const perPage = Number(searchParams.get("per_page")) || 8;
 
-  const path = "/products/silver";
+  const path = "/Products/Silver";
   const data: JewelryItem[] = jewelryData.silver || [];
 
   // Calculate pagination
@@ -35,7 +35,7 @@ export default function Silver() {
         {entries.map((item) => (
           <Link
             key={item.id}
-            href={`/products/silver/${item.id}`}
+            href={`/Products/Silver/${item.id}`}
             className="product-item p-4 border rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-white"
             aria-label={`View details for ${item.name}`}
           >
