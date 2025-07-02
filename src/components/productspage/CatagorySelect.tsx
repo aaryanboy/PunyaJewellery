@@ -1,111 +1,68 @@
-"use client"
+// src/components/CategorySelect.tsx
+"use client";
 
-import React from 'react';
+import React from "react";
 import { productData } from "@/data/products";
+import { useRouter } from "next/navigation";
 
-interface CategorySelectProps {
+type Props = {
   selectedCategory: "gold" | "silver";
-  setSelectedCategory: (category: "gold" | "silver") => void;
+  setSelectedCategory: (c: "gold" | "silver") => void;
   selectedSubcategory: string;
-  setSelectedSubcategory: (subcategory: string) => void;
-}
+  setSelectedSubcategory: (s: string) => void;
+  disableCategoryChange?: boolean;
+};
 
-const CategorySelect: React.FC<CategorySelectProps> = ({
+export default function CategorySelect({
   selectedCategory,
   setSelectedCategory,
   selectedSubcategory,
-  setSelectedSubcategory
-}) => {
-  const categories = ["gold", "silver"] as const;
+  setSelectedSubcategory,
+  disableCategoryChange = false,
+}: Props) {
+  const router = useRouter();
   const subcategories = Object.keys(productData[selectedCategory]);
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow">
-      {/* Category Selection */}
-      <div className="lg:block">
-        <h2 className="text-xl font-semibold mb-2 lg:mb-4">Categories</h2>
-        
-        {/* Mobile Layout - Horizontal Row */}
-        <div className="flex lg:hidden space-x-2 overflow-x-auto pb-2 mb-4">
-          {categories.map((category) => (
+    <div className="space-y-4">
+      {/* category toggle */}
+      {!disableCategoryChange && (
+        <div className="flex space-x-2">
+          {(["gold", "silver"] as const).map((cat) => (
             <button
-              key={category}
+              key={cat}
               onClick={() => {
-                setSelectedCategory(category);
-                setSelectedSubcategory(Object.keys(productData[category])[0]);
+                setSelectedCategory(cat);
+                router.push(`/products/${cat}`);
               }}
-              className={`px-4 py-2 rounded-full whitespace-nowrap transition-colors duration-200 ${
-                selectedCategory === category
-                  ? "bg-blue-500 text-white font-bold"
-                  : "bg-gray-100 hover:bg-gray-200"
+              className={`px-3 py-1 rounded ${
+                cat === selectedCategory
+                  ? "bg-yellow-500 text-white"
+                  : "bg-gray-200"
               }`}
             >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
+              {cat.toUpperCase()}
             </button>
           ))}
         </div>
-        
-        {/* Desktop Layout - Vertical List */}
-        <div className="hidden lg:flex lg:flex-col space-y-2 mb-6">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => {
-                setSelectedCategory(category);
-                setSelectedSubcategory(Object.keys(productData[category])[0]);
-              }}
-              className={`px-4 py-3 rounded transition-colors duration-200 text-left ${
-                selectedCategory === category
-                  ? "bg-blue-500 text-white font-bold"
-                  : "bg-gray-100 hover:bg-gray-200"
-              }`}
-            >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
-            </button>
-          ))}
-        </div>
-      </div>
+      )}
 
-      {/* Subcategory Selection */}
-      <div>
-        <h2 className="text-xl font-semibold mb-2 lg:mb-4">Subcategories</h2>
-        
-        {/* Mobile Layout - Horizontal Row */}
-        <div className="flex lg:hidden space-x-2 overflow-x-auto pb-2">
-          {subcategories.map((subcategory) => (
-            <button
-              key={subcategory}
-              onClick={() => setSelectedSubcategory(subcategory)}
-              className={`px-4 py-2 rounded-full whitespace-nowrap transition-colors duration-200 ${
-                selectedSubcategory === subcategory
-                  ? "bg-blue-500 text-white font-bold"
-                  : "bg-gray-100 hover:bg-gray-200"
-              }`}
-            >
-              {subcategory.charAt(0).toUpperCase() + subcategory.slice(1)}
-            </button>
-          ))}
-        </div>
-        
-        {/* Desktop Layout - Vertical List */}
-        <div className="hidden lg:flex lg:flex-col space-y-2">
-          {subcategories.map((subcategory) => (
-            <button
-              key={subcategory}
-              onClick={() => setSelectedSubcategory(subcategory)}
-              className={`px-4 py-3 rounded transition-colors duration-200 text-left ${
-                selectedSubcategory === subcategory
-                  ? "bg-blue-500 text-white font-bold"
-                  : "bg-gray-100 hover:bg-gray-200"
-              }`}
-            >
-              {subcategory.charAt(0).toUpperCase() + subcategory.slice(1)}
-            </button>
-          ))}
-        </div>
+      {/* subcategory buttons */}
+      <div className="flex flex-wrap gap-2">
+        {subcategories.map((sub) => (
+          <button
+            key={sub}
+            onClick={() => setSelectedSubcategory(sub)}
+            className={`px-3 py-1 rounded capitalize ${
+              sub === selectedSubcategory
+                ? "bg-blue-600 text-white"
+                : "bg-gray-200"
+            }`}
+          >
+            {sub}
+          </button>
+        ))}
       </div>
     </div>
   );
-};
-
-export default CategorySelect;
+}

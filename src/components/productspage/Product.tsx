@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useState } from "react";
-import { productData } from "@/data/products";
 import CategorySelect from "./CatagorySelect";
 import ProductListing from "./ProductListing";
 
