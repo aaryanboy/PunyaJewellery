@@ -1,6 +1,8 @@
 # PunyaJewellery
 
 
+the productinfo branch is working in all its pages
+
 Punya Jewelry Shop - Website
 Welcome to the Punya Jewelry Shop project! This website was built using React, Next.js, and Tailwind CSS to provide a sleek, responsive, and user-friendly interface for customers to explore beautiful jewelry pieces. The website allows users to view products, contact the store, and learn more about the jewelry collection.
 
