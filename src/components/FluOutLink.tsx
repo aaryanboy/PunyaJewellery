@@ -67,22 +67,13 @@ const PricingContent = (
       {/* Gold Jewelry Section */}
       <div className="p-4 flex-1">
         <h3 className="text-xl  cursor-pointer"><Link href="/products/gold">Gold</Link>  </h3>
-        <ul className="mt-2 space-y-2 text-gray-500 text-base cursor-pointer" >
-          <li className="hover:text-yellow-600 transition ">Earrings</li>
-          <li className="hover:text-yellow-600 transition">Ring</li>
-          <li className="hover:text-yellow-600 transition">Anklet</li>
-        </ul>
+        
       </div>
 
       {/* Silver Jewelry Section */}
       <div className="p-4   flex-1">
         <h3 className="text-xl    cursor-pointer"><Link href="/products/silver">Silver</Link> </h3>
-        <ul className="mt-2 space-y-2 text-gray-700 text-base cursor-pointer">
-          <li className="hover:text-gray-500 transition">Necklace</li>
-          <li className="hover:text-gray-500 transition">Earrings</li>
-          <li className="hover:text-gray-500 transition"> Bracelet</li>
-          <li className="hover:text-gray-500 transition"> Ring</li>
-        </ul>
+        
       </div>
     </div>
   </div>
