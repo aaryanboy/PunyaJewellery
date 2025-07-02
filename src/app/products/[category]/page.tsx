@@ -31,7 +31,7 @@ export default function ProductListByCategory() {
           setSelectedCategory={(cat) => router.push(`/products/${cat}`)}
           selectedSubcategory={selectedSubcategory}
           setSelectedSubcategory={setSelectedSubcategory}
-          disableCategoryChange
+          disableCategoryChange ={false}
         />
         <ProductListing
           selectedCategory={category}
@@ -47,7 +47,7 @@ export default function ProductListByCategory() {
             setSelectedCategory={(cat) => router.push(`/products/${cat}`)}
             selectedSubcategory={selectedSubcategory}
             setSelectedSubcategory={setSelectedSubcategory}
-            disableCategoryChange
+            disableCategoryChange ={false} // allow category change on desktop
           />
         </div>
         <div className="w-3/4 overflow-y-auto">

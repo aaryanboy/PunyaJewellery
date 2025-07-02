@@ -18,13 +18,14 @@ export default function CategorySelect({
   setSelectedCategory,
   selectedSubcategory,
   setSelectedSubcategory,
-  disableCategoryChange = false,
+  disableCategoryChange ,
 }: Props) {
   const router = useRouter();
   const subcategories = Object.keys(productData[selectedCategory]);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-5 p-4 bg-white rounded shadow-md">
+      
       {/* category toggle */}
       {!disableCategoryChange && (
         <div className="flex space-x-2">
@@ -37,7 +38,7 @@ export default function CategorySelect({
               }}
               className={`px-3 py-1 rounded ${
                 cat === selectedCategory
-                  ? "bg-yellow-500 text-white"
+                  ? "bg-black text-white"
                   : "bg-gray-200"
               }`}
             >
@@ -48,21 +49,25 @@ export default function CategorySelect({
       )}
 
       {/* subcategory buttons */}
-      <div className="flex flex-wrap gap-2">
-        {subcategories.map((sub) => (
-          <button
-            key={sub}
-            onClick={() => setSelectedSubcategory(sub)}
-            className={`px-3 py-1 rounded capitalize ${
-              sub === selectedSubcategory
-                ? "bg-blue-600 text-white"
-                : "bg-gray-200"
-            }`}
-          >
-            {sub}
-          </button>
-        ))}
-      </div>
+
+      <div className="flex flex-wrap gap-4 flex-row sm:flex-col max-w-xs mx-auto">
+  <p className="w-full font-semibold mb-2">Types</p>
+  {subcategories.map((sub) => (
+    <button
+      key={sub}
+      onClick={() => setSelectedSubcategory(sub)}
+      className={`px-4 py-2 rounded capitalize transition-colors duration-200 ${
+        sub === selectedSubcategory
+          ? "bg-black text-white"
+          : "bg-gray-200 hover:bg-gray-300"
+      }`}
+    >
+      {sub}
+    </button>
+  ))}
+</div>
+
+
     </div>
   );
 }

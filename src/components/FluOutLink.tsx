@@ -98,11 +98,12 @@ const FluOutLink = () => {
     <div className="flex items-center text-lg font-sans tracking-wide px-3 py-13 mt-5 z-30 whitespace-nowrap">
     <FlyoutLink href="/">Home</FlyoutLink>
     <div className="p-2"></div>
+    <FlyoutLink href="/products" FlyoutContent={PricingContent} >Products</FlyoutLink>
+     <div className="p-2"></div>
     <FlyoutLink href="/about" >About Us</FlyoutLink>
     <div className="p-2"></div>
     
-    <FlyoutLink href="/products" FlyoutContent={PricingContent} >Products</FlyoutLink>
-     <div className="p-2"></div>
+    
     <FlyoutLink href="/blogs" >Blogs</FlyoutLink>
    
   </div>
