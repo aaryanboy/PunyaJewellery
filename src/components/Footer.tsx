@@ -25,7 +25,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/shop" className="text-sm hover:text-gray-400">
+                <a href="/products/gold" className="text-sm hover:text-gray-400">
                   Shop
                 </a>
               </li>
@@ -35,7 +35,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/contact" className="text-sm hover:text-gray-400">
+                <a href="/contactus" className="text-sm hover:text-gray-400">
                   Contact
                 </a>
               </li>
@@ -46,24 +46,20 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
-              <a href="#" className="text-2xl hover:text-gray-400">
+              <a href="https://www.facebook.com/punyajewellery" className="text-2xl hover:text-gray-400">
                 <i className="fab fa-facebook"></i>
               </a>
-              <a href="#" className="text-2xl hover:text-gray-400">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="#" className="text-2xl hover:text-gray-400">
+             
+              <a href="https://www.instagram.com/punyajewellery/" className="text-2xl hover:text-gray-400">
                 <i className="fab fa-instagram"></i>
               </a>
-              <a href="#" className="text-2xl hover:text-gray-400">
-                <i className="fab fa-pinterest"></i>
-              </a>
+            
             </div>
           </div>
         </div>
 
         <div className="text-center mt-8 text-sm">
-          <p>&copy; 2025 Jewelry Shop. All Rights Reserved.</p>
+          <p>&copy; Punya Jewelry Shop. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

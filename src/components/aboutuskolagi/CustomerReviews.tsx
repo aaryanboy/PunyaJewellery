@@ -1,20 +1,25 @@
 import React from 'react';
 
 const CustomerReviews: React.FC = () => (
-  <section className="py-8 bg-gray-100">
-    <h2 className="text-3xl font-bold text-center mb-4">Customer Reviews</h2>
-    <div className="space-y-6 max-w-3xl mx-auto">
-      <div className="bg-white p-6 rounded shadow">
-        <p className="text-md mb-2">
-          &ldquo;Booked an online consultant being at home – it was so comfortable. Very much satisfied with the product.&rdquo;
-        </p>
-        <p className="text-sm font-semibold">- Nandita Neupane</p>
-      </div>
-      <div className="bg-white p-6 rounded shadow">
-        <p className="text-md mb-2">
-          &ldquo;The staff is well organized and very respectful. Will consider as one of the best jewelry stores in Kathmandu.&rdquo;
-        </p>
-        <p className="text-sm font-semibold">- Aarati M</p>
+  <section className="py-12 bg-gradient-to-b from-white to-gray-100">
+    <div className="max-w-5xl mx-auto px-4 text-center">
+      <h2 className="text-4xl font-bold text-gray-800 mb-8">What Our Customers Say</h2>
+      <div className="grid gap-6 md:grid-cols-2">
+        {/* Review 1 */}
+        <div className="bg-white p-6 rounded-2xl shadow-md border hover:shadow-xl transition-shadow duration-300 text-left">
+          <p className="text-gray-700 text-lg italic mb-4">
+            &ldquo;I purchased a gold Tilhari set and it was absolutely stunning! The craftsmanship and detail exceeded my expectations. Will definitely shop again.&rdquo;
+          </p>
+          <p className="text-gray-900 font-semibold">— Nandita Neupane</p>
+        </div>
+
+        {/* Review 2 */}
+        <div className="bg-white p-6 rounded-2xl shadow-md border hover:shadow-xl transition-shadow duration-300 text-left">
+          <p className="text-gray-700 text-lg italic mb-4">
+            &ldquo;Their silver collection is elegant and timeless. I received so many compliments on my Rani Haar. The customer service was warm and helpful too.&rdquo;
+          </p>
+          <p className="text-gray-900 font-semibold">— Aarati M</p>
+        </div>
       </div>
     </div>
   </section>

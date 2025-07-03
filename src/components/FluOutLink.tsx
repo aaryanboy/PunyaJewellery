@@ -16,7 +16,7 @@ const FlyoutLink: React.FC<FlyoutLinkProps> = ({ children, href, FlyoutContent }
   // Handle both hover and touch interactions
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     if (FlyoutContent) {
-      // e.preventDefault(); // Prevent page reload
+      e.preventDefault(); // Prevent page reload
       setOpen((prev) => !prev); // Toggle dropdown
     }
   };

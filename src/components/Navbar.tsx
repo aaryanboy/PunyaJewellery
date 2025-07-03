@@ -37,7 +37,7 @@ const Navbar = () => {
         <div className="w-1/3 xl:w-1/2 flex items-center gap-12">
         <Link href="/" className="flex items-center gap-3">
   <Image src="/logonobackground.png" alt="" width={54} height={54} quality={100} />
-  <div className="hidden lg:block text-2xl tracking-wide pr-3 whitespace-nowrap font-serif">
+  <div className="hidden md:block text-2xl tracking-wide pr-3 whitespace-nowrap font-serif">
     Punya Jewellery
   </div>
 </Link>

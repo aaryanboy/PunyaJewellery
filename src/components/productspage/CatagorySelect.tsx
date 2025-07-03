@@ -50,7 +50,7 @@ export default function CategorySelect({
 
       {/* subcategory buttons */}
 
-      <div className="flex flex-wrap gap-4 flex-row sm:flex-col max-w-xs mx-auto">
+      <div className="flex flex-wrap gap-4 lg-row lg:flex-col max-w-xs mx-auto">
   <p className="w-full font-semibold mb-2">Types</p>
   {subcategories.map((sub) => (
     <button
