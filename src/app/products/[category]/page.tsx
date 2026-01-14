@@ -1,62 +1,26 @@
-"use client";
+// app/products/[category]/page.tsx
+import { redirect } from "next/navigation";
+import { Category, defaultSubcat, validCategories } from "@/data/products";
 
-import { useParams, useRouter } from "next/navigation";
-import React, { useState } from "react";
-import CategorySelect from "@/components/productspage/CatagorySelect";
-import ProductListing from "@/components/productspage/ProductListing";
+type Params = { category: string };
 
-export default function ProductListByCategory() {
-  const router = useRouter();
-  const { category } = useParams<{ category?: string }>(); // category can be undefined on first render
+/** runtime + compile‑time check */
+function isCategory(value: string): value is Category {
+  return (validCategories as readonly string[]).includes(value);
+}
 
-  // ✅ 1. CALL HOOKS UNCONDITIONALLY
-  const [selectedSubcategory, setSelectedSubcategory] = useState<string>("ring");
+export default function CategoryRoot({ params }: { params: Params }) {
+  const { category } = params;
 
-  // ✅ 2. NOW DO ANY EARLY EXIT / CONDITIONAL RENDER
-  if (category !== "gold" && category !== "silver") {
-    return (
-      <div className="p-6 text-red-500 text-center">
-        Invalid category.
-      </div>
-    );
+  // 🚧 1. Validate
+  if (!isCategory(category)) {
+    // could also render a 404 component instead of redirecting
+    redirect("/404");
   }
 
-  /* ————————————————————  regular render ———————————————————— */
-  return (
-    <div className="container mx-auto p-4 bg-gray-50 min-h-screen">
-      {/* mobile */}
-      <div className="lg:hidden">
-        <CategorySelect
-          selectedCategory={category}
-          setSelectedCategory={(cat) => router.push(`/products/${cat}`)}
-          selectedSubcategory={selectedSubcategory}
-          setSelectedSubcategory={setSelectedSubcategory}
-          disableCategoryChange ={false}
-        />
-        <ProductListing
-          selectedCategory={category}
-          selectedSubcategory={selectedSubcategory}
-        />
-      </div>
+  // ✅ 2. Here `category` is now *narrowed* to `Category`
+  const targetSubcat = defaultSubcat(category);
 
-      {/* desktop */}
-      <div className="hidden lg:flex lg:space-x-6">
-        <div className="w-1/4 sticky top-4 self-start">
-          <CategorySelect
-            selectedCategory={category}
-            setSelectedCategory={(cat) => router.push(`/products/${cat}`)}
-            selectedSubcategory={selectedSubcategory}
-            setSelectedSubcategory={setSelectedSubcategory}
-            disableCategoryChange ={false} // allow category change on desktop
-          />
-        </div>
-        <div className="w-3/4 overflow-y-auto">
-          <ProductListing
-            selectedCategory={category}
-            selectedSubcategory={selectedSubcategory}
-          />
-        </div>
-      </div>
-    </div>
-  );
+  // 🚀 3. Redirect to first sub‑category
+  redirect(`/products/${category}/${targetSubcat}`);
 }

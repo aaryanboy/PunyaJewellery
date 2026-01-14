@@ -6,6 +6,7 @@ import AntiqueGoldenJewellery2 from "@/components/AntiqueGoldenJewellery/Antique
 
 import AntiqueGoldenJewellery from "@/components/AntiqueGoldenJewellery/AntiqueGoldenJewellery"
 import BlogSection from "@/components/Blogpage/BlogSection"
+import ElfsightWidget from "@/components/contactuspagekodata/ElfsightWidget"
 
 
 const HomePage = () => {
@@ -16,6 +17,7 @@ const HomePage = () => {
       
       <Slider/>      
       <SpecialtySection/>
+      <ElfsightWidget/>
 
       <AntiqueGoldenJewellery/>
 

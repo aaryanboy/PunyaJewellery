@@ -4,12 +4,14 @@
 import React from "react";
 import { productData } from "@/data/products";
 import { useRouter } from "next/navigation";
+import { Subcategory } from "@/data/products";
+
 
 type Props = {
   selectedCategory: "gold" | "silver";
   setSelectedCategory: (c: "gold" | "silver") => void;
-  selectedSubcategory: string;
-  setSelectedSubcategory: (s: string) => void;
+  selectedSubcategory: Subcategory;
+  setSelectedSubcategory: (s: Subcategory) => void;
   disableCategoryChange?: boolean;
 };
 
@@ -24,8 +26,13 @@ export default function CategorySelect({
   const subcategories = Object.keys(productData[selectedCategory]);
 
   return (
+
+
+
+    
     <div className="space-y-5 p-4 bg-white rounded shadow-md">
       
+
       {/* category toggle */}
       {!disableCategoryChange && (
         <div className="flex space-x-2">
@@ -49,23 +56,24 @@ export default function CategorySelect({
       )}
 
       {/* subcategory buttons */}
-
       <div className="flex flex-wrap gap-4 lg-row lg:flex-col max-w-xs mx-auto">
-  <p className="w-full font-semibold mb-2">Types</p>
-  {subcategories.map((sub) => (
-    <button
-      key={sub}
-      onClick={() => setSelectedSubcategory(sub)}
-      className={`px-4 py-2 rounded capitalize transition-colors duration-200 ${
-        sub === selectedSubcategory
-          ? "bg-black text-white"
-          : "bg-gray-200 hover:bg-gray-300"
-      }`}
-    >
-      {sub}
-    </button>
-  ))}
-</div>
+        <p className="w-full font-semibold mb-2">Types</p>
+        {subcategories.map((sub) => (
+          <button
+            key={sub}
+            onClick={() => setSelectedSubcategory(sub as Subcategory)}
+            className={`px-4 py-2 rounded capitalize transition-colors duration-200 ${
+              sub === selectedSubcategory
+                ? "bg-black text-white"
+                : "bg-gray-200 hover:bg-gray-300"
+            }`}
+          >
+            {sub}
+          </button>
+        ))}
+      </div>
+
+      <div className="a">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla, cumque! Omnis rem tenetur esse beatae tempora iure minus quasi soluta, quae accusamus eius ea officia earum perspiciatis, tempore provident quo.</div>
 
 
     </div>
